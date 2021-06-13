@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-comiclog-dev-235428-authRole",
+      "UnauthRoleArn": "arn:aws:iam::511434296343:role/amplify-comiclog-dev-235428-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::511434296343:role/amplify-comiclog-dev-235428-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-comiclog-dev-235428-deployment",
+      "UnauthRoleName": "amplify-comiclog-dev-235428-unauthRole",
+      "StackName": "amplify-comiclog-dev-235428",
+      "StackId": "arn:aws:cloudformation:us-east-2:511434296343:stack/amplify-comiclog-dev-235428/4279c630-cc57-11eb-8979-0655e78223a6",
+      "AmplifyAppId": "d3ifenstpsyxb7"
+    },
+    "categories": {
+      "auth": {
+        "comiclog4670217d": {}
+      }
+    }
+  }
+}

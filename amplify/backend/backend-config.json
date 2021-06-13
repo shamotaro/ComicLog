@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "comiclog4670217d": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
