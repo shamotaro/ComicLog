@@ -1,0 +1,66 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-comiclog-dev-235428-authRole",
+      "UnauthRoleArn": "arn:aws:iam::511434296343:role/amplify-comiclog-dev-235428-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::511434296343:role/amplify-comiclog-dev-235428-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-comiclog-dev-235428-deployment",
+      "UnauthRoleName": "amplify-comiclog-dev-235428-unauthRole",
+      "StackName": "amplify-comiclog-dev-235428",
+      "StackId": "arn:aws:cloudformation:us-east-2:511434296343:stack/amplify-comiclog-dev-235428/4279c630-cc57-11eb-8979-0655e78223a6",
+      "AmplifyAppId": "d3ifenstpsyxb7",
+      "AuthTriggerTemplateURL": ""
+    }
+  },
+  "auth": {
+    "comiclog4670217d": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-comiclog-dev-235428-deployment/amplify-cfn-templates/auth/comiclog4670217d-cloudformation-template.yml",
+        "logicalId": "authcomiclog4670217d"
+      },
+      "lastPushTimeStamp": "2021-06-14T12:36:09.100Z",
+      "output": {
+        "UserPoolId": "us-east-2_aXwumkhYZ",
+        "AppClientIDWeb": "1v5i9br9cm66pnpsb2lrsqdgtf",
+        "AppClientID": "200q15447g2hrejb42ps4tmljl",
+        "IdentityPoolId": "us-east-2:206abb45-3a3c-4f11-9a3d-2829c152397d",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-2:511434296343:userpool/us-east-2_aXwumkhYZ",
+        "IdentityPoolName": "comiclog4670217d_identitypool_4670217d__dev",
+        "UserPoolName": "comiclog4670217d_userpool_4670217d"
+      },
+      "lastPushDirHash": "KvX/QIbSJFpUdtlB4eXkRFAtb60="
+    }
+  },
+  "api": {
+    "notesapp": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7,
+              "description": "demo"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "ytfemvtcpzbnbms4acefb7sl6u",
+        "GraphQLAPIEndpointOutput": "https://h4ac7mrbqfgw3mwv4ygcbeulri.appsync-api.us-east-2.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-ejaas2gz2zecjlrnqivtbsywke"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-comiclog-dev-235428-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apinotesapp"
+      },
+      "lastPushTimeStamp": "2021-06-14T12:36:09.102Z",
+      "lastPushDirHash": "/LlqgbaSl89s9PMy2b1RGK/Bceg="
+    }
+  }
+}
