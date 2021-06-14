@@ -128,7 +128,41 @@
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
           "DynamoDBEnableServerSideEncryption": false,
           "S3DeploymentBucket": "amplify-comiclog-dev-235428-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/f4d38a1144e847d2d758c1bea5846d751172396e",
+          "S3DeploymentRootKey": "amplify-appsync-files/64dc74804d8b10ce5626897805f0607c16f2a0b2",
+          "env": "dev"
+        }
+      }
+    },
+    "storageimagestorage": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-comiclog-dev-235428-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+        "Parameters": {
+          "bucketName": "your-unique-bucket-name",
+          "authPolicyName": "s3_amplify_839438a3",
+          "unauthPolicyName": "s3_amplify_839438a3",
+          "authRoleName": {
+            "Ref": "AuthRoleName"
+          },
+          "unauthRoleName": {
+            "Ref": "UnauthRoleName"
+          },
+          "selectedGuestPermissions": "s3:GetObject,s3:ListBucket",
+          "selectedAuthenticatedPermissions": "s3:PutObject,s3:GetObject,s3:ListBucket",
+          "s3PermissionsAuthenticatedPublic": "s3:PutObject,s3:GetObject",
+          "s3PublicPolicy": "Public_policy_77dc4937",
+          "s3PermissionsAuthenticatedUploads": "s3:PutObject",
+          "s3UploadsPolicy": "Uploads_policy_77dc4937",
+          "s3PermissionsAuthenticatedProtected": "s3:PutObject,s3:GetObject",
+          "s3ProtectedPolicy": "Protected_policy_77dc4937",
+          "s3PermissionsAuthenticatedPrivate": "s3:PutObject,s3:GetObject",
+          "s3PrivatePolicy": "Private_policy_77dc4937",
+          "AuthenticatedAllowList": "ALLOW",
+          "s3ReadPolicy": "read_policy_77dc4937",
+          "s3PermissionsGuestPublic": "DISALLOW",
+          "s3PermissionsGuestUploads": "DISALLOW",
+          "GuestAllowList": "DISALLOW",
+          "triggerFunction": "NONE",
           "env": "dev"
         }
       }
