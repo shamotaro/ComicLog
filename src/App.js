@@ -14,6 +14,10 @@ const initialFormState = { name: '', description: '' }
 // サインアウトボタンをレンダリングする AmplifySignOut コンポーネントも使用
 
 // APIでユーザーがメモを作成、一覧表示、削除できるようにする
+// fetchNotes - この関数は、API クラスを使用してクエリを GraphQL API に送信し、メモのリストを取得します。
+// createNote - この関数はまた、API クラスを使用して変異を GraphQL API に送信します。
+// 主な違いは、この関数では、GraphQL 変異に必要な変数を渡して、フォームデータで新しいノートを作成できることです。
+// deleteNote - createNote と同様に、この関数は変数と共に GraphQL ミューテーションを送信しますが、メモを作成する代わりにメモを削除します。
 
 function App() {
   const [notes, setNotes] = useState([]);
