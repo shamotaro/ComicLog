@@ -108,11 +108,7 @@ function App() {
       />
       <button onClick={createNote}>Create Note</button>
 
-      <div className="AppTable">
-      <div style={style}>
-        <Table />
-      </div>
-    </div>
+
       <div style={{marginBottom: 30}}>
         {
           notes.map(note => (

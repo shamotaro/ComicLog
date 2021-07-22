@@ -23,7 +23,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-comiclog-dev-235428-deployment/amplify-cfn-templates/auth/comiclog4670217d-cloudformation-template.yml",
         "logicalId": "authcomiclog4670217d"
       },
-      "lastPushTimeStamp": "2021-06-14T13:21:30.281Z",
+      "lastPushTimeStamp": "2021-07-22T05:14:39.569Z",
       "output": {
         "UserPoolId": "us-east-2_aXwumkhYZ",
         "AppClientIDWeb": "1v5i9br9cm66pnpsb2lrsqdgtf",
@@ -59,8 +59,8 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-comiclog-dev-235428-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apinotesapp"
       },
-      "lastPushTimeStamp": "2021-06-14T13:21:32.237Z",
-      "lastPushDirHash": "bHUeVCIYz2ZlunhtvayYhZxRvrA="
+      "lastPushTimeStamp": "2021-07-22T05:14:41.348Z",
+      "lastPushDirHash": "qRRygr9zNtoaXlxq6AxUQ3ydmOc="
     }
   },
   "storage": {
@@ -71,7 +71,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-comiclog-dev-235428-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
         "logicalId": "storageimagestorage"
       },
-      "lastPushTimeStamp": "2021-06-14T13:21:32.237Z",
+      "lastPushTimeStamp": "2021-07-22T05:14:39.576Z",
       "output": {
         "BucketName": "your-unique-bucket-name235428-dev",
         "Region": "us-east-2"

@@ -32,3 +32,38 @@ export const listNotes = /* GraphQL */ `
     }
   }
 `;
+export const getComic = /* GraphQL */ `
+  query GetComic($id: ID!) {
+    getComic(id: $id) {
+      id
+      name
+      releaseDate
+      description
+      image
+      bookNum
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listComics = /* GraphQL */ `
+  query ListComics(
+    $filter: ModelComicFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listComics(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        releaseDate
+        description
+        image
+        bookNum
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

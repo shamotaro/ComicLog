@@ -4,3 +4,13 @@ type Note @model {
   description: String
   image: String
 }
+
+type Comic @model {
+  id: ID!
+  name: String!
+  releaseDate: String
+  description: String
+  image: String
+  bookNum: Int
+}
+

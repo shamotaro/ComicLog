@@ -37,3 +37,45 @@ export const onDeleteNote = /* GraphQL */ `
     }
   }
 `;
+export const onCreateComic = /* GraphQL */ `
+  subscription OnCreateComic {
+    onCreateComic {
+      id
+      name
+      releaseDate
+      description
+      image
+      bookNum
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateComic = /* GraphQL */ `
+  subscription OnUpdateComic {
+    onUpdateComic {
+      id
+      name
+      releaseDate
+      description
+      image
+      bookNum
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteComic = /* GraphQL */ `
+  subscription OnDeleteComic {
+    onDeleteComic {
+      id
+      name
+      releaseDate
+      description
+      image
+      bookNum
+      createdAt
+      updatedAt
+    }
+  }
+`;
