@@ -1,11 +1,14 @@
+// Reactをインポート、React hooksを利用(クラスのソースを書かずに基本的な機能を利用できる)
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Table from './table';
 import { API, Storage } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+// GraphQL は API のために作られたクエリ言語であり、既存のデータに対するクエリを実行するランタイム
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 
+// 入力フォームにデフォルト(最初)で入れておく値
 const initialFormState = { name: '', description: '' }
 
 //このコンポーネントでは、withAuthenticator コンポーネントを使用
@@ -16,6 +19,10 @@ const initialFormState = { name: '', description: '' }
 
 // APIでユーザーがメモを作成、一覧表示、削除できるようにする
 function App() {
+
+   // notesはただの変数
+   // setNotesはnotesに値を入れるためだけの関数
+   // useState([])の[]はnotesの初期値
   const [notes, setNotes] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
   const style = {
@@ -24,6 +31,8 @@ function App() {
     marginTop: 150,
   };
 
+  // 第1引数には実行させたい副作用関数を記述
+  // 第2引数には副作用関数の実行タイミングを制御する依存データを記述
   useEffect(() => {
     fetchNotes();
   }, []);
@@ -39,6 +48,11 @@ function App() {
   async function createNote() {
     if (!formData.name || !formData.description) return;
     await API.graphql({ query: createNoteMutation, variables: { input: formData } });
+    // 画像がメモに関連付けられている場合は、画像をローカル画像配列に追加
+    if (formData.image) {
+      const image = await Storage.get(formData.image);
+      formData.image = image;
+    }
     setNotes([ ...notes, formData ]);
     setFormData(initialFormState);
   }
@@ -73,17 +87,6 @@ function App() {
     setNotes(apiData.data.listNotes.items);
   }
 
-  // 画像がメモに関連付けられている場合は、画像をローカル画像配列に追加
-  async function createNote() {
-    if (!formData.name || !formData.description) return;
-    await API.graphql({ query: createNoteMutation, variables: { input: formData } });
-    if (formData.image) {
-      const image = await Storage.get(formData.image);
-      formData.image = image;
-    }
-    setNotes([ ...notes, formData ]);
-    setFormData(initialFormState);
-  }
 
 
   return (
@@ -104,6 +107,7 @@ function App() {
         onChange={onChange}
       />
       <button onClick={createNote}>Create Note</button>
+
       <div className="AppTable">
       <div style={style}>
         <Table />
