@@ -4,6 +4,8 @@ import './App.css';
 import Table from './table';
 import { API, Storage } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+import ReactFlexyTable from "react-flexy-table"
+import "react-flexy-table/dist/index.css"
 // GraphQL は API のために作られたクエリ言語であり、既存のデータに対するクエリを実行するランタイム
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
@@ -88,7 +90,6 @@ function App() {
   }
 
 
-
   return (
     <div className="App">
       <h1>My Notes App</h1>
@@ -108,17 +109,31 @@ function App() {
       />
       <button onClick={createNote}>Create Note</button>
 
+      {/* <div className="App">
+        <div style={style}>
+          <div>
+            <ReactFlexyTable data={notes.name} />   
+          </div>
+        </div>
+      </div> */}
+
 
       <div style={{marginBottom: 30}}>
         {
           notes.map(note => (
             <div key={note.id || note.name}>
-              <h2>{note.name}</h2>
-              <p>{note.description}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
-              {
-                note.image && <img src={note.image} style={{width: 400}} />
-              }
+               <table border="1" width="300" >
+                <tbody>
+                  <tr>
+                    <td>{note.name}</td>
+                    <td>{note.description}</td>
+                    <td>{
+                      note.image && <img src={note.image} style={{width: 100}} />
+                    }</td>
+                    <td><button onClick={() => deleteNote(note)}>Delete note</button></td>
+                  </tr>
+                  </tbody>
+              </table>
             </div>
           ))
         }

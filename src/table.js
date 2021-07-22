@@ -2,6 +2,7 @@ import React from 'react'
 import ReactFlexyTable from "react-flexy-table"
 import "react-flexy-table/dist/index.css"
  
+
 const Table = () => {
   const data = [
     { label: "Grapes 🍇", value: "grapes" },
